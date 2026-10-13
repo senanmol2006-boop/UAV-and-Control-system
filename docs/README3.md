@@ -4,25 +4,7 @@ Day 3 builds on the vertical-motion model from Day 2. It shows how to describe U
 
 The day also introduces numerical integration with MATLAB's `ode45` solver and the forward Euler method. Numerical results are checked against analytical solutions, and the remaining differences are analysed in both MATLAB and Simulink.
 
-## Table of Contents
 
-1. [Learning Objectives](#learning-objectives)
-2. [Review of the Vertical-Motion Model](#1-review-of-the-vertical-motion-model)
-3. [Operating Point vs. Initial Condition](#2-operating-point-vs-initial-condition)
-4. [Deriving the Hover-Deviation Model](#3-deriving-the-hover-deviation-model)
-5. [Position Deviation and Altitude Datum](#4-position-deviation-and-altitude-datum)
-6. [Affine Models and Linearization](#5-affine-models-and-linearization)
-7. [First-Order State-Space Representation](#6-first-order-state-space-representation)
-8. [Analytical Solution](#7-analytical-solution)
-9. [Numerical Integration](#8-numerical-integration)
-10. [MATLAB Implementation](#9-matlab-implementation)
-11. [Simulink Implementation](#10-simulink-implementation)
-12. [Error Analysis](#11-error-analysis)
-13. [Model Verification and Limitations](#12-model-verification-and-limitations)
-14. [Key Takeaways](#13-key-takeaways)
-15. [Deliverables](#day-3-deliverables)
-16. [Suggested Folder Structure](#suggested-folder-structure)
-17. [Next Steps](#next-steps)
 
 ## Learning Objectives
 
@@ -229,41 +211,6 @@ $$\dot x_1 = x_2$$
 
 $$\dot x_2 = \frac{u}{m}$$
 
-The resulting first-order system is:
-
-$$
-\begin{bmatrix}
-\dot x_1 \\
-\dot x_2
-\end{bmatrix}
-=
-\begin{bmatrix}
-0 & 1 \\
-0 & 0
-\end{bmatrix}
-\begin{bmatrix}
-x_1 \\
-x_2
-\end{bmatrix}
-+
-\begin{bmatrix}
-0 \\
-1/m
-\end{bmatrix}
-u
-$$
-
-The state vector contains altitude and vertical velocity:
-
-$$
-x =
-\begin{bmatrix}
-z \\
-v
-\end{bmatrix}
-$$
-
-This representation is suitable for numerical ODE solvers and provides a foundation for later state-space control models.
 
 ---
 
@@ -677,44 +624,4 @@ The simplified model assumes constant mass and gravity, constant thrust incremen
 - Remaining differences of about $10^{-16}$ are floating-point round-off, not modelling error.
 - Numerical accuracy does not guarantee physical accuracy.
 
----
 
-## Day 3 Deliverables
-
-- [ ] Derivation of the hover-deviation equation.
-- [ ] Explanation of operating points and initial conditions.
-- [ ] MATLAB ODE implementation using `ode45`.
-- [ ] Comparison with the analytical solution.
-- [ ] Forward Euler calculation and error comparison.
-- [ ] Simulink model comparing absolute and deviation formulations.
-- [ ] MATLAB and Simulink error plots with round-off interpretation.
-- [ ] Plots and saved simulation results.
-- [ ] Documentation of assumptions, errors, and observations.
-
-## Suggested Folder Structure
-
-```text
-Day-03/
-├── README.md
-├── matlab/
-│   └── day03_ode.m
-├── simulink/
-│   └── day03_absolute_vs_delta.slx
-├── figures/
-│   ├── day03_ode.png
-│   └── day03_simulink_error.png
-├── results/
-│   └── day03.mat
-└── docs/
-    └── day03_notes.md
-```
-
-Only include files that have actually been created and tested.
-
-## Next Steps
-
-Day 4 introduces Laplace transforms and the double-integrator transfer function. The deviation model developed on Day 3 provides the foundation for deriving:
-
-$$G(s) = \frac{1}{ms^2}$$
-
-This transfer function describes the zero-state relationship between thrust increment and altitude deviation.
