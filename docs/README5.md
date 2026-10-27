@@ -2,22 +2,7 @@
 
 Verifying that one simplified UAV vertical-motion model gives the same response when built as an **integrator chain**, a **transfer function**, and a **state-space** model in MATLAB Simulink.
 
-## Table of Contents
 
-- [Objective](#objective)
-- [Physical System](#physical-system)
-- [The Three Representations](#the-three-representations)
-- [Comparison](#comparison)
-- [Simulation Setup](#simulation-setup)
-- [Analytical Reference](#analytical-reference)
-- [Verifying Equivalence](#verifying-equivalence)
-- [Solver Settings and Time](#solver-settings-and-time)
-- [Common Mistakes](#common-mistakes)
-- [Project Structure](#project-structure)
-- [Revision Questions](#revision-questions)
-- [Takeaway](#takeaway)
-
----
 
 ## Objective
 
