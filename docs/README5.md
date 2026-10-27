@@ -455,6 +455,9 @@ One physical system can have several mathematical representations, and each offe
 
 When implemented consistently, all three agree. Checking against an analytical solution, inspecting residuals, and computing the maximum error turns a working simulation into a **verified model**.
 
+<img width="963" height="380" alt="image" src="https://github.com/user-attachments/assets/2d0f8d7a-041b-4bd2-a120-b1caf7988688" />
+<img width="211" height="75" alt="image" src="https://github.com/user-attachments/assets/35fdb788-31a2-434a-8691-3210d5755a85" />
+
 ---
 
 ### Suggested commit message
